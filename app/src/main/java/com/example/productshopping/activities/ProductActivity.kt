@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.productshopping.adapter.ProductAdapter
 import com.example.productshopping.R
 import com.example.productshopping.viewmodel.ProductViewModel
-import com.example.productshopping.adapter.SpinnerAdapter
 
 class ProductActivity : AppCompatActivity() {
 
@@ -23,7 +22,6 @@ class ProductActivity : AppCompatActivity() {
     private lateinit var searchField: EditText
     private lateinit var tipsTextView: TextView
     private lateinit var productAdapter: ProductAdapter
-    private lateinit var spinnerAdapter : SpinnerAdapter
 
     private val productViewModel: ProductViewModel by viewModels()
 
@@ -54,15 +52,15 @@ class ProductActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
-        productViewModel.filteredProducts.observe(this, Observer { products ->
+        productViewModel.filteredProducts.observe(this) { products ->
             productAdapter.updateList(products)
             tipsTextView.visibility = if (products.isEmpty()) View.VISIBLE else View.GONE
             progressBar.visibility = if (products.isNotEmpty()) View.GONE else View.VISIBLE
-        })
+        }
 
-        productViewModel.categories.observe(this, Observer { categories ->
+        productViewModel.categories.observe(this) { categories ->
             setupSpinnerAdapter(categories)
-        })
+        }
     }
 
     private fun setupSearchField() {
