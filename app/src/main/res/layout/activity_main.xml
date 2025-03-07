@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    tools:context=".activities.MainActivity">
+
+    <TextView
+        android:id="@+id/textLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="28sp"
+        android:textColor="@color/dark_blue"
+        android:layout_gravity="center"
+        android:paddingBottom="24dp"
+        tools:ignore="HardcodedText" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="Email"
+                android:textColor="@color/black"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:textColorHint="@color/dark_gray"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textColor="@color/black"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:textColorHint="@color/dark_gray"
+                android:layout_marginTop="16dp"
+                tools:ignore="Autofill,HardcodedText" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/red"
+                android:textStyle="italic"
+                android:visibility="gone"
+                android:id="@+id/errorText"/>
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/progressBar"/>
+
+            <Button
+                android:id="@+id/buttonLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/dark_green"
+                android:layout_marginTop="24dp"
+                android:padding="16dp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don’t have an account? Register"
+        android:textSize="14sp"
+        android:textColor="@color/dark_blue"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
